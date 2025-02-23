@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - eBooks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background: rgba(0, 0, 0, 0.7); 
+            backdrop-filter: blur(10px);
+            transition: 0.3s ease-in-out;
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #EAB543 !important;
+        }
+        .nav-link:hover {
+            color: #EAB543 !important;
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        /* Contact Page Styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .contact-container {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+        }
+        .contact-info i {
+            color: #EAB543;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-submit {
+            background-color: #EAB543 !important;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #ff9f43 !important;
+        }
+
+        /* Bootstrap Alert Styling */
+        .alert {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Footer */
+        .footer {
+            background: #222;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer a {
+            color: #EAB543;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            color: #ff9f43;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">eBooks</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact_us.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-outline-light" href="sign_in_page.html">Sign In</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form class="d-flex ms-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+                <button class="btn btn-warning" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Form Section -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="contact-container row">
+                <!-- Left Side - Contact Info -->
+                <div class="col-md-5">
+                    <h2 class="fw-bold">Get in Touch</h2>
+                    <p>We'd love to hear from you! Whether you have a question or just want to say hello.</p>
+                    
+                    <div class="contact-info mt-4">
+                        <p><i class="bi bi-telephone-fill"></i> +123-456-7890</p>
+                        <p><i class="bi bi-envelope-fill"></i> assistance@ebooks.com</p>
+                        <p><i class="bi bi-geo-alt-fill"></i> 15 West 3rd St, Media, PA 19063</p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Form -->
+                <div class="col-md-7">
+                    <form id="contactForm">
+                        <div class="row gap-1">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="John">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Phone (optional)</label>
+                            <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Type your message ..."></textarea>
+                        </div>
+
+                        <!-- Bootstrap Alert Box (Hidden Initially) -->
+                        <div id="formAlert" class="alert d-none mt-3 text-center" role="alert"></div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 eBooks. All rights reserved.</p>
+    <p>Follow us: 
+        <a href="#"><i class="bi bi-instagram"></i></a> 
+        <a href="#"><i class="bi bi-facebook"></i></a> 
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+    </p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let firstName = document.getElementById("firstName").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+        let alertBox = document.getElementById("formAlert");
+
+        if (!firstName || !email || !message) {
+            alertBox.className = "alert alert-warning mt-3 text-center d-flex align-items-center";
+            alertBox.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-2"></i> Please fill in all required fields.`;
+            alertBox.classList.remove("d-none");
+        } else {
+            alertBox.className = "alert alert-success mt-3 text-center d-flex align-items-center";
+            alertBox.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i> Thank you for reaching out! We'll get back to you soon.`;
+            alertBox.classList.remove("d-none");
+        this.reset();
+
+        setTimeout(() => {
+            alertBox.style.opacity = "0";
+            setTimeout(() => alertBox.classList.add("d-none"), 500);
+        }, 5000);
+        }
+    });
+</script>
+
+</body>
+</html>
