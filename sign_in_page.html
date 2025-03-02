@@ -1,122 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - eBooks</title>
-    
+    <title>eBooks - Discover, Read, Sell</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
     <style>
-        /* Background */
-        body {
-            background-color: #f8f9fa; /* Dark theme */
-            color: white;
-            font-family: 'Merriweather', serif;
-            padding-top: 80px;
+        /* Navbar Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        /* Navbar */
-        .navbar {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #ffff;
         }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease-in-out;
+        }
+
         .navbar-brand {
             font-size: 1.8rem;
             font-weight: bold;
             color: #EAB543 !important;
         }
-        .nav-link {
-            display: inline-block;
-        }
+
         .nav-link:hover {
             color: #EAB543 !important;
             transform: scale(1.1);
             transition: 0.3s;
         }
-        .nav-link.active {
-            color: #EAB543 !important;
-            font-weight: bold;
+
+        .container-1 {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            background: #1e272e;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #485460;
         }
 
-        /* Sign-In Container */
-        .sign-in-container {
-            max-width: 450px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 10px;
+        .welcome-section {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, #EAB543, #EAB543);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #1e272e;
             text-align: center;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-            margin: auto;
+            padding: 0 40px;
         }
 
-        .sign-in-title {
-            font-size: 24px;
-            font-weight: bold;
+        .welcome-section .welcome {
+            font-size: 36px;
             margin-bottom: 20px;
-            color: #EAB543;
-        }
-        /* Sign-In Button */
-        .btn-sign-in {
-            background-color: #EAB543;
-            color: black;
-            font-weight: bold;
-            border: none;
-            padding: 10px;
-        }
-        .btn-sign-in:hover {
-            background-color: #C9A038;
+            /* font-weight: bold; */
+            color: #1e272e;
+            animation: bounce 2s infinite ease-in-out;
         }
 
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white !important;
-            border: 1px solid #8F7E56;
-           
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
-        .form-control::placeholder {
-            color: #bbb;
+        .welcome-section p {
+            font-size: 18px;
+            color: #485460;
         }
 
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white !important;
-            border-color: #EAB543;
-            box-shadow: none;
+        .forms-container {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
         }
 
-        /* Password Toggle Icon */
-        .password-toggle {
+        .form-container {
             position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: color 0.3s ease-in-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            transition: transform 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #eee;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #808e9b;
+            background-color: #485460;
+            color: #eee;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-container input::placeholder {
+            color: #ddd;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: #EAB543;
+            border: none;
+            border-radius: 5px;
+            color: #1e272e;
+            font-size: 16px;
             cursor: pointer;
-            color: #EAB543;
-            font-size: 1.2rem;
+            transition: background 0.3s ease;
         }
 
-        
+        .form-container button:hover {
+            background: #EAB543;
+        }
 
-        /* Back to Home */
-        .back-link {
-            margin-top: 15px;
+        .form-container p {
+            text-align: center;
+            margin-top: 20px;
+            color: #ddd;
         }
-        .back-link a {
+
+        .form-container p span {
             color: #EAB543;
-            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
         }
-        .back-link a:hover {
-            text-decoration: underline;
+
+        .login {
+            transform: translateX(0);
+        }
+
+        .signup {
+            transform: translateX(100%);
+        }
+
+        .active-login .login {
+            transform: translateX(0);
+        }
+
+        .active-login .signup {
+            transform: translateX(100%);
+        }
+
+        .active-signup .login {
+            transform: translateX(-100%);
+        }
+
+        .active-signup .signup {
+            transform: translateX(0);
         }
     </style>
 </head>
+
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">eBooks</a>
@@ -128,61 +203,195 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="sign_in_page.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light" href="sign_in_page.html">Sign In</a>
+                    </li>
                 </ul>
+                <!-- Search Bar -->
+                <form class="d-flex ms-3" role="search" onsubmit="return searchBooks(event)">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search books..."
+                        aria-label="Search">
+                    <button class="btn btn-warning" type="submit"><i class="bi bi-search"></i></button>
+                </form>
             </div>
         </div>
     </nav>
+    <div class="container-1 active-login">
+        <!--left side: welcome-section-->
+        <div class="welcome-section">
+            <h1 class="welcome">Welcome!</h1>
+            <p>Join our community and enjoy seamless acess to exclusive features.</p>
+        </div>
 
-    <div class="container d-flex align-items-center justify-content-center" style="height: 80vh;">
-        <div class="sign-in-container">
-            <h2 class="sign-in-title">Sign In to eBooks</h2>
-            <form action="#" method="post">
-                <div class="mb-3">
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
-                </div>
-                <div class="mb-3 position-relative">
-                    <input type="password" id="password" name="password" class="form-control pe-5" placeholder="Password" required>
-                    <span id="password-toggle" class="password-toggle">
-                        <i class="bi bi-eye-slash"></i>
-                    </span>
-                </div>
-                <div class="text-end mt-2">
-                    <a href="#" class="text-warning" style="text-decoration: none;">Forgot Password?</a>
-                </div>
-                <button type="submit" class="btn btn-sign-in w-100">Sign In</button>
-            </form>
-            <div class="back-link">
-                <a href="index.html">Back to Home</a>
+        <!--right side: forms-->
+        <div class="forms-container">
+            <!--login form-->
+            <div class="form-container login">
+                <h2>Login</h2>
+                <form>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p> Don't have an account? <span class="switch-form">Sign Up</span></p>
+            </div>
+            <!--Signup form-->
+            <div class="form-container signup">
+                <h2>Sign up</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account?<span class="switch-form">Login</span></p>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Notification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="alertModalBody">
+                    <!-- Alert message will be inserted here dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    const passwordInput = document.getElementById("password");
-    const passwordToggle = document.getElementById("password-toggle");
+        // Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+            navbar.style.background = window.scrollY > 50 ? "rgba(0, 0, 0, 0.9)" : "rgba(0, 0, 0, 0.7)";
+        });
 
-    // Set password input to text by default (visible)
-    passwordInput.type = "text";
-    passwordToggle.innerHTML = '<i class="bi bi-eye"></i>'; 
-
-    passwordToggle.addEventListener("click", function () {
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            passwordToggle.innerHTML = '<i class="bi bi-eye"></i>';
-        } else {
-            passwordInput.type = "password";
-            passwordToggle.innerHTML = '<i class="bi bi-eye-slash"></i>';
+        // Search Function
+        function searchBooks(event) {
+            event.preventDefault();
+            let query = document.getElementById("searchInput").value.trim();
+            if (query) alert("Searching for: " + query);
         }
-    });
-            // Highlight active navbar link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                if (link.href === window.location.href) {
-                    link.classList.add('active');
-                }
+        window.addEventListener("scroll", function () {
+            let navbar = document.querySelector(".navbar");
+            navbar.style.background = window.scrollY > 50 ? "rgba(0, 0, 0, 0.9)" : "rgba(0, 0, 0, 0.7)";
+        });
+
+        // Search Function
+        function searchBooks(event) {
+            event.preventDefault();
+            let query = document.getElementById("searchInput").value.trim();
+            if (query) alert("Searching for: " + query);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container-1');
+            const switchFormLinks = document.querySelectorAll('.switch-form');
+
+            switchFormLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (link.textContent == 'Sign Up') {
+                        container.classList.remove('active-login');
+                        container.classList.add('active-signup');
+                    } else {
+                        container.classList.remove('active-signup');
+                        container.classList.add('active-login');
+                    }
+                })
+            })
+        })
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.container-1');
+            const switchFormLinks = document.querySelectorAll('.switch-form');
+            const loginForm = document.querySelector('.login form');
+            const signupForm = document.querySelector('.signup form');
+
+            switchFormLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (link.textContent.trim() === 'Sign Up') {
+                        container.classList.remove('active-login');
+                        container.classList.add('active-signup');
+                    } else {
+                        container.classList.remove('active-signup');
+                        container.classList.add('active-login');
+                    }
+                });
             });
+
+            // Show alert modal
+            function showAlert(message) {
+                document.getElementById("alertModalBody").innerHTML = message;
+                let modal = new bootstrap.Modal(document.getElementById('alertModal'));
+                modal.show();
+            }
+
+            // Form validation function
+            function validateForm(event, formType) {
+                event.preventDefault();
+                let valid = true;
+                let errorMessage = "";
+
+                if (formType === 'login') {
+                    const email = loginForm.querySelector('input[type=email]').value.trim();
+                    const password = loginForm.querySelector('input[type=password]').value.trim();
+
+                    if (!validateEmail(email)) {
+                        valid = false;
+                        errorMessage += "Invalid email format.<br>";
+                    }
+                    if (password.length < 6) {
+                        valid = false;
+                        errorMessage += "Password must be at least 6 characters long.<br>";
+                    }
+                }
+
+                if (formType === 'signup') {
+                    const fullName = signupForm.querySelector('input[type=text]').value.trim();
+                    const email = signupForm.querySelector('input[type=email]').value.trim();
+                    const password = signupForm.querySelector('input[type=password]').value.trim();
+
+                    if (fullName.length < 3) {
+                        valid = false;
+                        errorMessage += "Full Name must be at least 3 characters long.<br>";
+                    }
+                    if (!validateEmail(email)) {
+                        valid = false;
+                        errorMessage += "Invalid email format.<br>";
+                    }
+                    if (!validatePassword(password)) {
+                        valid = false;
+                        errorMessage += "Password must contain at least 6 characters, one uppercase letter, one number, and one special character.<br>";
+                    }
+                }
+
+                if (!valid) {
+                    showAlert(errorMessage);
+                } else {
+                    showAlert(`${formType.charAt(0).toUpperCase() + formType.slice(1)} successful!`);
+                }
+            }
+
+            // Email validation function
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Password validation function
+            function validatePassword(password) {
+                const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+                return passwordRegex.test(password);
+            }
+            loginForm.addEventListener('submit', (event) => validateForm(event, 'login'));
+            signupForm.addEventListener('submit', (event) => validateForm(event, 'signup'));
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

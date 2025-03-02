@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genres - eBooks</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
@@ -21,14 +22,17 @@
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
         }
+
         .navbar-brand {
             font-size: 1.8rem;
             font-weight: bold;
             color: #EAB543 !important;
         }
+
         .nav-link:hover {
             color: #EAB543 !important;
         }
+
         .nav-link.active {
             color: #EAB543 !important;
             font-weight: bold;
@@ -43,12 +47,14 @@
             top: 100px;
             height: fit-content;
         }
+
         .filter-title {
             font-size: 18px;
             font-weight: bold;
             color: #EAB543;
             margin-bottom: 10px;
         }
+
         .form-check-label {
             cursor: pointer;
         }
@@ -61,19 +67,26 @@
             text-align: center;
             transition: 0.3s;
         }
+
         .book-card img {
-    width: 100%; /* Makes all images responsive within their grid */
-    height: 250px; /* Sets a fixed height */
-    object-fit: contain; /* Ensures images fill the area without distortion */
-    border-radius: 10px; /* Optional: Rounds corners */
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow */
-    background: #f8f9fa;
-    padding: 5px;
-}
+            width: 100%;
+            /* Makes all images responsive within their grid */
+            height: 250px;
+            /* Sets a fixed height */
+            object-fit: contain;
+            /* Ensures images fill the area without distortion */
+            border-radius: 10px;
+            /* Optional: Rounds corners */
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            /* Optional: Adds shadow */
+            background: #f8f9fa;
+            padding: 5px;
+        }
 
         .book-card:hover {
             transform: scale(1.05);
         }
+
         .book-title {
             font-size: 16px;
             font-weight: bold;
@@ -82,6 +95,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -96,11 +110,13 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-light" href="sign_in_page.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light" href="sign_in_page.html">Sign In</a>
+                    </li>
                 </ul>
                 <!-- Search Bar -->
                 <form class="d-flex ms-3" role="search" onsubmit="return searchBooks(event)">
-                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search books..."
+                        aria-label="Search">
                     <button class="btn btn-warning" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
@@ -166,7 +182,7 @@
                         <input class="form-check-input" type="checkbox" id="business">
                         <label class="form-check-label" for="business">Business</label>
                     </div>
-                    
+
                     <hr>
                     <h5 class="filter-title">Features</h5>
                     <div class="form-check">
@@ -199,6 +215,60 @@
                     </div>
 
                     <hr>
+                    <h5 class="filter-title">Filter by Study Genre</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="computer-science">
+                        <label class="form-check-label" for="computer-science">Computer Science (CSE)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mechanical">
+                        <label class="form-check-label" for="mechanical">Mechanical Engineering</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="civil">
+                        <label class="form-check-label" for="civil">Civil Engineering</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="electrical">
+                        <label class="form-check-label" for="electrical">Electrical Engineering (EEE)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="electronics">
+                        <label class="form-check-label" for="electronics">Electronics & Communication (ECE)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mathematics">
+                        <label class="form-check-label" for="mathematics">Mathematics</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="physics">
+                        <label class="form-check-label" for="physics">Physics</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="programming">
+                        <label class="form-check-label" for="programming">Programming & Algorithms</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ai-ml">
+                        <label class="form-check-label" for="ai-ml">AI & Machine Learning</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="robotics">
+                        <label class="form-check-label" for="robotics">Robotics</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="thermodynamics">
+                        <label class="form-check-label" for="thermodynamics">Thermodynamics</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="structural-engineering">
+                        <label class="form-check-label" for="structural-engineering">Structural Engineering</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="circuit-design">
+                        <label class="form-check-label" for="circuit-design">Circuit Design</label>
+                    </div>
+
 
                     <h5 class="filter-title">Sort by Customer Reviews</h5>
                     <select class="form-select" id="sort-reviews">
@@ -208,7 +278,7 @@
 
                 </div>
             </div>
-            
+
 
             <!-- Books Grid -->
             <div class="col-md-9">
@@ -243,29 +313,86 @@
                             <p class="book-title">Rich Dad Poor Dad</p>
                         </div>
                     </div>
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="10.webp" alt="Introduction to Algorithms" class="img-fluid">
+                            <p class="book-title">Introduction to Algorithms (CSE)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="11.jpg" alt="Fundamentals of Thermodynamics" class="img-fluid">
+                            <p class="book-title">Fundamentals of Thermodynamics (Mechanical)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="12.jpg" alt="Structural Analysis" class="img-fluid">
+                            <p class="book-title">Structural Analysis (Civil Engineering)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="13.jpeg" alt="Electrical Circuit Analysis" class="img-fluid">
+                            <p class="book-title">Electrical Circuit Analysis (EEE)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="14.jpeg" alt="Microelectronics Circuit Design" class="img-fluid">
+                            <p class="book-title">Microelectronics Circuit Design (ECE)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="15.jpeg" alt="Linear Algebra and Its Applications" class="img-fluid">
+                            <p class="book-title">Linear Algebra and Its Applications (Mathematics)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="16.jpg" alt="Feynman Lectures on Physics" class="img-fluid">
+                            <p class="book-title">Feynman Lectures on Physics</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-2">
+                        <div class="book-card">
+                            <img src="17.jpeg" alt="Deep Learning by Ian Goodfellow" class="img-fluid">
+                            <p class="book-title">Deep Learning (AI & ML)</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     <script>
-        document.getElementById("sort-reviews").addEventListener("change", function() {
+        document.getElementById("sort-reviews").addEventListener("change", function () {
             let sortType = this.value;
             let booksContainer = document.querySelector(".col-md-9 .row");
             let books = Array.from(booksContainer.children);
-            
+
             books.sort((a, b) => {
                 let ratingA = Math.floor(Math.random() * 5) + 1; // Simulating ratings (replace with actual data)
                 let ratingB = Math.floor(Math.random() * 5) + 1;
-                
+
                 return sortType === "high-to-low" ? ratingB - ratingA : ratingA - ratingB;
             });
-    
+
             booksContainer.innerHTML = ""; // Clear current books
             books.forEach(book => booksContainer.appendChild(book)); // Re-add sorted books
         });
     </script>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
